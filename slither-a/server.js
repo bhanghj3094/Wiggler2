@@ -7,10 +7,11 @@ var io = require('socket.io').listen(server);
 app.use('/src',express.static(__dirname + '/src'));
 app.use('/asset',express.static(__dirname + '/asset'));
 
-app.get('/',function(req, res){
-  var name = req.query.name;
-  var skin = req.query.skin;
-  
+var skinNum = 0;
+app.get('/game',function(req, res){
+  skinNum = req.query.skin;
+  console.log('skinNumber: '+ skinNum);
+
   res.sendFile('index.html', { root: __dirname });
 });
 
@@ -18,4 +19,10 @@ server.lastPlayderID = 0;
 
 server.listen(process.env.PORT || 9000,function(){
   console.log('Listening on '+server.address().port);
+});
+
+io.on('connection', function(socket){
+  socket.on('getSkin', function(){
+    socket.emit('skinHere', skinNum);
+  })
 });

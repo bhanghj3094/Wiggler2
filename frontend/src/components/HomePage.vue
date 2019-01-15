@@ -36,7 +36,7 @@
       <v-btn id="readyButton" color="#ea7420" round=true
             v-on:mouseenter="textChange()"
             v-on:mouseleave="textReChange()">
-            <a style="text-decoration:none" :href="'http://143.248.36.116:9000?name='+myName+'%skin='+skinNum">{{ ready }}</a></v-btn>
+            <a style="text-decoration:none" :href="'http://143.248.36.116:9000/game?name='+myName+'&skin='+skinNum">{{ ready }}</a></v-btn>
       <div id="github">
         <a v-bind:href="git_repo">
           {{ git_repo }}
