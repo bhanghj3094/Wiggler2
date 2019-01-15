@@ -1,6 +1,6 @@
 # Wiggler
 
-> A Vue.js project
+> A Vue.js project by @Bread0288(박진호), @jung-seob(이정섭)
 
 ## Build Setup
 
